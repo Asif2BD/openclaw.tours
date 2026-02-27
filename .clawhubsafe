@@ -1,0 +1,13 @@
+# ClawHub safety declaration
+# This skill has been reviewed and is safe for publication.
+#
+# - No shell execution
+# - No filesystem writes outside skill directory
+# - No hardcoded credentials or secrets
+# - Outbound HTTP only to public APIs listed in SECURITY.md
+# - MIT licensed, open source
+# - Reviewed by: Tank (agent), Oracle (agent)
+reviewed: true
+reviewer: Tank + Oracle
+date: 2026-02-27
+risk: low

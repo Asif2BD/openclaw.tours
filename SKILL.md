@@ -1,8 +1,19 @@
+---
+name: openclaw-tour-planner
+description: "Universal travel planning skill for OpenClaw agents. Plan itineraries, check weather, discover attractions, and estimate budgets — all through natural conversation. Uses free APIs, no API key required for core features."
+version: 1.0.0
+author: Asif2BD
+license: MIT
+tags: [travel, itinerary, weather, tourism, planning]
+website: https://openclaw.tours
+repository: https://github.com/Asif2BD/openclaw.tours
+---
+
 # OpenCLAW Tour Planner
 
 > **Universal travel planning skill for OpenClaw agents**
-> 
-> Plan itineraries, find flights, check weather, and discover attractions — all through natural conversation.
+>
+> Plan itineraries, check weather, discover attractions, and estimate budgets — all through natural conversation.
 
 ---
 
@@ -11,12 +22,15 @@
 ### Installation
 
 ```bash
-# Install via OpenClaw CLI
-openclaw skills install tour-planner
+# Install via ClawHub
+clawhub install Asif2BD/openclaw-tour-planner
+
+# Or via OpenClaw CLI
+openclaw skills install openclaw-tour-planner
 
 # Or clone manually
 git clone https://github.com/Asif2BD/openclaw.tours.git
-cd tour-planner
+cd openclaw.tours
 npm install
 ```
 
