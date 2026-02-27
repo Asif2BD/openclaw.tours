@@ -1,0 +1,64 @@
+{
+  "competitors": [
+    {
+      "id": "pdf-embedder",
+      "name": "PDF Embedder",
+      "website": "https://wordpress.org/plugins/pdf-embedder/",
+      "pricing_url": "https://wp-pdf.com/pricing/",
+      "blog_url": "https://wp-pdf.com/blog/",
+      "description": "Popular PDF embedding plugin with security features",
+ "check_frequency": "daily",
+      "priority": "high"
+    },
+    {
+      "id": "dearflip",
+      "name": "DearFlip 3D Flipbook",
+      "website": "https://wordpress.org/plugins/3d-flipbook-dflip-lite/",
+      "pricing_url": "https://dearflip.com/pricing/",
+      "blog_url": "https://dearflip.com/blog/",
+      "description": "3D flipbook plugin for interactive PDF viewing",
+      "check_frequency": "daily",
+      "priority": "high"
+    },
+    {
+      "id": "embed-pdf-viewer",
+      "name": "Embed PDF Viewer",
+      "website": "https://wordpress.org/plugins/embed-pdf-viewer/",
+      "pricing_url": null,
+      "blog_url": null,
+      "description": "Simple PDF embedding solution",
+      "check_frequency": "weekly",
+      "priority": "medium"
+    },
+    {
+      "id": "pdf-viewer-for-elementor",
+      "name": "PDF Viewer for Elementor",
+      "website": "https://wordpress.org/plugins/pdf-viewer-for-elementor/",
+      "pricing_url": null,
+      "blog_url": null,
+      "description": "Elementor-specific PDF viewer",
+      "check_frequency": "weekly",
+      "priority": "low"
+    },
+    {
+      "id": "tnc-pdf-viewer",
+      "name": "TNC PDF Viewer",
+      "website": "https://wordpress.org/plugins/tnc-pdf-viewer/",
+      "pricing_url": null,
+      "blog_url": null,
+      "description": "Another PDF viewer option",
+      "check_frequency": "weekly",
+      "priority": "low"
+    }
+  ],
+  "settings": {
+    "notification_channel": "telegram",
+    "alert_threshold": "medium",
+    "retention_days": 90,
+    "snapshot_interval": "daily",
+    "report_schedule": {
+      "daily": "08:00",
+      "weekly": "09:00"
+    }
+  }
+}

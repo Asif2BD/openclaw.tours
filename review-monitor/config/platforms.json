@@ -1,0 +1,55 @@
+{
+  "platforms": [
+    {
+      "id": "wordpress",
+      "name": "WordPress.org",
+      "url": "https://wordpress.org/plugins/embedpress/reviews/",
+      "priority": "high",
+      "check_frequency": "daily",
+      "rating_scale": 5,
+      "features": ["ratings", "reviews", "support_threads"]
+    },
+    {
+      "id": "g2",
+      "name": "G2",
+      "url": "https://www.g2.com/products/embedpress/reviews",
+      "priority": "medium",
+      "check_frequency": "weekly",
+      "rating_scale": 5,
+      "features": ["ratings", "reviews", "pros_cons"]
+    },
+    {
+      "id": "capterra",
+      "name": "Capterra",
+      "url": "https://www.capterra.com/p/10012645/EmbedPress/",
+      "priority": "medium",
+      "check_frequency": "weekly",
+      "rating_scale": 5,
+      "features": ["ratings", "reviews"]
+    },
+    {
+      "id": "twitter",
+      "name": "Twitter/X",
+      "url": null,
+      "priority": "low",
+      "check_frequency": "daily",
+      "rating_scale": null,
+      "features": ["mentions", "sentiment"]
+    }
+  ],
+  "settings": {
+    "sentiment_threshold": {
+      "alert_negative": true,
+      "alert_rating_below": 3
+    },
+    "response_time": {
+      "wordpress": "48 hours",
+      "g2": "7 days",
+      "capterra": "7 days"
+    },
+    "report_schedule": {
+      "daily": "10:00",
+      "weekly": "Monday 11:00"
+    }
+  }
+}

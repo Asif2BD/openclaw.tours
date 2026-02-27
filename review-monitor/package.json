@@ -1,0 +1,21 @@
+{
+  "name": "review-monitor",
+  "version": "1.0.0",
+  "description": "Monitor customer reviews for EmbedPress",
+  "main": "src/monitor.js",
+  "scripts": {
+    "init": "node src/init-db.js",
+    "check": "node scripts/check.js",
+    "list": "node scripts/list.js",
+    "sentiment": "node scripts/sentiment.js",
+    "features": "node scripts/features.js",
+    "report": "node scripts/report.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

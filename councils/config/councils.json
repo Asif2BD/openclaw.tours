@@ -1,0 +1,46 @@
+{
+  "councils": [
+    {
+      "id": "seo",
+      "name": "SEO Council",
+      "description": "Search optimization and technical SEO decisions",
+      "lead": "agent-ironclad",
+      "members": ["agent-ironclad", "agent-bard"],
+      "meeting_frequency": "weekly",
+      "decision_areas": [
+        "Keyword targeting priorities",
+        "Technical SEO changes",
+        "Content optimization",
+        "Competitor SEO responses"
+      ]
+    },
+    {
+      "id": "content",
+      "name": "Content Council",
+      "description": "Content strategy, planning, and distribution",
+      "lead": "agent-bard",
+      "members": ["agent-bard", "agent-flash", "agent-vision"],
+      "meeting_frequency": "weekly",
+      "decision_areas": [
+        "Content calendar priorities",
+        "Content type selection",
+        "Distribution strategy",
+        "Visual asset planning"
+      ]
+    },
+    {
+      "id": "strategy",
+      "name": "Strategy Council",
+      "description": "High-level business and competitive strategy",
+      "lead": "agent-kimi",
+      "members": ["agent-kimi", "agent-bard", "agent-flash", "agent-ironclad", "agent-vision", "human-asif"],
+      "meeting_frequency": "monthly",
+      "decision_areas": [
+        "Major initiatives",
+        "Resource allocation",
+        "Competitive responses",
+        "Long-term planning"
+      ]
+    }
+  ]
+}

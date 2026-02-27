@@ -1,0 +1,132 @@
+{
+  "timestamp": "2026-02-18T17:18:59.411Z",
+  "competitors": [
+    {
+      "competitor": {
+        "id": "pdf-embedder",
+        "name": "PDF Embedder",
+        "website": "https://wordpress.org/plugins/pdf-embedder/",
+        "pricing_url": "https://wp-pdf.com/pricing/",
+        "blog_url": "https://wp-pdf.com/blog/",
+        "description": "Popular PDF embedding plugin with security features",
+        "check_frequency": "daily",
+        "priority": "high",
+        "created_at": "2026-02-18 10:44:56",
+        "updated_at": "2026-02-18 10:44:56"
+      },
+      "snapshots": [
+        {
+          "competitor_id": "pdf-embedder",
+          "url": "https://wp-pdf.com/pricing/",
+          "content_hash": "029622b203314fafccacab88ea0b7f87",
+          "content_preview": "<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-5WM24SZG\" height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe> .edd-js-none .edd-has-js, .edd-js .edd-no-js, body.edd-js input.edd-no-js { display: none; } /* <![CDATA[ */(function(){var c = document.body.classList;c.remove('edd-js-none');c.add('edd-js');})();/* ]]> */ Login The Most Powerful Way to Embed PDF Join 300,000+ site owners who use PDF Embedder on their website. Allen Wyatt PDF Embedder has been a vital part",
+          "status_code": 200,
+          "scraped_at": "2026-02-18T17:19:01.340Z"
+        },
+        {
+          "competitor_id": "pdf-embedder",
+          "url": "https://wp-pdf.com/blog/",
+          "content_hash": "20d24be7b0aef1a5753e700008d63eaf",
+          "content_preview": "<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-5WM24SZG\" height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe> .edd-js-none .edd-has-js, .edd-js .edd-no-js, body.edd-js input.edd-no-js { display: none; } /* <![CDATA[ */(function(){var c = document.body.classList;c.remove('edd-js-none');c.add('edd-js');})();/* ]]> */ PricingDocsBlog LoginGet PDF Embedder PDF Embedder Blog Tips, and Resources for WordPress and PDF Embedder How to Add and Upload PDF Files to Your WordP",
+          "status_code": 200,
+          "scraped_at": "2026-02-18T17:19:03.181Z"
+        }
+      ],
+      "changes": [
+        {
+          "competitor_id": "pdf-embedder",
+          "change_type": "pricing",
+          "field_name": "content",
+          "old_value": "<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-5WM24SZG\" height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe> .edd-js-none .edd-has-js, .edd-js .edd-no-js, body.edd-js input.edd-no-js { display: none; } /* <![CDATA[ */(function(){var c = document.body.classList;c.remove('edd-js-none');c.add('edd-js');})();/* ]]> */ Login The Most Powerful Way to Embed PDF Join 300,000+ site owners who use PDF Embedder on their website. Allen Wyatt PDF Embedder has been a vital part",
+          "new_value": "<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-5WM24SZG\" height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe> .edd-js-none .edd-has-js, .edd-js .edd-no-js, body.edd-js input.edd-no-js { display: none; } /* <![CDATA[ */(function(){var c = document.body.classList;c.remove('edd-js-none');c.add('edd-js');})();/* ]]> */ Login The Most Powerful Way to Embed PDF Join 300,000+ site owners who use PDF Embedder on their website. Allen Wyatt PDF Embedder has been a vital part",
+          "severity": "high",
+          "detected_at": "2026-02-18T17:19:01.352Z",
+          "id": 1
+        },
+        {
+          "competitor_id": "pdf-embedder",
+          "change_type": "blog",
+          "field_name": "content",
+          "old_value": "<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-5WM24SZG\" height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe> .edd-js-none .edd-has-js, .edd-js .edd-no-js, body.edd-js input.edd-no-js { display: none; } /* <![CDATA[ */(function(){var c = document.body.classList;c.remove('edd-js-none');c.add('edd-js');})();/* ]]> */ PricingDocsBlog LoginGet PDF Embedder PDF Embedder Blog Tips, and Resources for WordPress and PDF Embedder How to Add and Upload PDF Files to Your WordP",
+          "new_value": "<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-5WM24SZG\" height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe> .edd-js-none .edd-has-js, .edd-js .edd-no-js, body.edd-js input.edd-no-js { display: none; } /* <![CDATA[ */(function(){var c = document.body.classList;c.remove('edd-js-none');c.add('edd-js');})();/* ]]> */ PricingDocsBlog LoginGet PDF Embedder PDF Embedder Blog Tips, and Resources for WordPress and PDF Embedder How to Add and Upload PDF Files to Your WordP",
+          "severity": "low",
+          "detected_at": "2026-02-18T17:19:03.185Z",
+          "id": 2
+        }
+      ]
+    },
+    {
+      "competitor": {
+        "id": "dearflip",
+        "name": "DearFlip 3D Flipbook",
+        "website": "https://wordpress.org/plugins/3d-flipbook-dflip-lite/",
+        "pricing_url": "https://dearflip.com/pricing/",
+        "blog_url": "https://dearflip.com/blog/",
+        "description": "3D flipbook plugin for interactive PDF viewing",
+        "check_frequency": "daily",
+        "priority": "high",
+        "created_at": "2026-02-18 10:44:56",
+        "updated_at": "2026-02-18 10:44:56"
+      },
+      "snapshots": [
+        {
+          "competitor_id": "dearflip",
+          "url": "https://dearflip.com/blog/",
+          "content_hash": "6fb14dacb144cd6747278b7e5d05ecb9",
+          "content_preview": "Skip to content <img width=\"256\" height=\"256\" src=\"https://dearflip.com/wp-content/uploads/2023/04/DearFlip-256-1.png\" class=\"custom-logo\" alt=\"DearFlip 3D Flipbook &#8211; PDF Viewer\" decoding=\"async\" fetchpriority=\"high\" srcset=\"https://dearflip.com/wp-content/uploads/2023/04/DearFlip-256-1.png 256w, https://dearflip.com/wp-content/uploads/2023/04/DearFlip-256-1-150x150.png 150w\" sizes=\"(max-width: 256px) 100vw, 256px\" /> Menu Plugins WordPress Flipbook JS Flipbook Joomla Flipbook Demos Embedd",
+          "status_code": 200,
+          "scraped_at": "2026-02-18T17:19:04.915Z"
+        }
+      ],
+      "changes": []
+    },
+    {
+      "competitor": {
+        "id": "embed-pdf-viewer",
+        "name": "Embed PDF Viewer",
+        "website": "https://wordpress.org/plugins/embed-pdf-viewer/",
+        "pricing_url": null,
+        "blog_url": null,
+        "description": "Simple PDF embedding solution",
+        "check_frequency": "weekly",
+        "priority": "medium",
+        "created_at": "2026-02-18 10:44:56",
+        "updated_at": "2026-02-18 10:44:56"
+      },
+      "snapshots": [],
+      "changes": []
+    },
+    {
+      "competitor": {
+        "id": "pdf-viewer-for-elementor",
+        "name": "PDF Viewer for Elementor",
+        "website": "https://wordpress.org/plugins/pdf-viewer-for-elementor/",
+        "pricing_url": null,
+        "blog_url": null,
+        "description": "Elementor-specific PDF viewer",
+        "check_frequency": "weekly",
+        "priority": "low",
+        "created_at": "2026-02-18 10:44:56",
+        "updated_at": "2026-02-18 10:44:56"
+      },
+      "snapshots": [],
+      "changes": []
+    },
+    {
+      "competitor": {
+        "id": "tnc-pdf-viewer",
+        "name": "TNC PDF Viewer",
+        "website": "https://wordpress.org/plugins/tnc-pdf-viewer/",
+        "pricing_url": null,
+        "blog_url": null,
+        "description": "Another PDF viewer option",
+        "check_frequency": "weekly",
+        "priority": "low",
+        "created_at": "2026-02-18 10:44:56",
+        "updated_at": "2026-02-18 10:44:56"
+      },
+      "snapshots": [],
+      "changes": []
+    }
+  ]
+}

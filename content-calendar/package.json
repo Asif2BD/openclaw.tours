@@ -1,0 +1,20 @@
+{
+  "name": "content-calendar",
+  "version": "1.0.0",
+  "description": "Content calendar and pipeline management for EmbedPress",
+  "main": "src/calendar.js",
+  "scripts": {
+    "init": "node src/init-db.js",
+    "add": "node scripts/add.js",
+    "calendar": "node scripts/calendar.js",
+    "update": "node scripts/update.js",
+    "ideas": "node scripts/ideas.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

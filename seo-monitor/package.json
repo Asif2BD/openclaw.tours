@@ -1,0 +1,21 @@
+{
+  "name": "seo-monitor",
+  "version": "1.0.0",
+  "description": "SEO monitoring and optimization for EmbedPress",
+  "main": "src/monitor.js",
+  "scripts": {
+    "init": "node src/init-db.js",
+    "rankings": "node scripts/rankings.js",
+    "audit": "node scripts/audit.js",
+    "gaps": "node scripts/gap-analysis.js",
+    "report": "node scripts/report.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.6",
+    "axios": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

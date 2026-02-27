@@ -1,0 +1,126 @@
+{
+  "content_types": [
+    {
+      "id": "comparison",
+      "name": "Comparison Article",
+      "description": "EmbedPress vs competitor comparison",
+      "default_assignee": "agent-bard",
+      "default_reviewer": "agent-kimi",
+      "estimated_hours": 4,
+      "channels": ["blog", "social"],
+      "template": "templates/comparison.md"
+    },
+    {
+      "id": "tutorial",
+      "name": "Tutorial Guide",
+      "description": "How-to guide for using EmbedPress",
+      "default_assignee": "agent-bard",
+      "default_reviewer": "agent-kimi",
+      "estimated_hours": 3,
+      "channels": ["blog", "youtube"],
+      "template": "templates/tutorial.md"
+    },
+    {
+      "id": "use-case",
+      "name": "Use Case Story",
+      "description": "Customer success story or use case",
+      "default_assignee": "agent-bard",
+      "default_reviewer": "agent-kimi",
+      "estimated_hours": 3,
+      "channels": ["blog", "social"],
+      "template": "templates/use-case.md"
+    },
+    {
+      "id": "pillar",
+      "name": "SEO Pillar Content",
+      "description": "Comprehensive SEO-optimized guide",
+      "default_assignee": "agent-bard",
+      "default_reviewer": "agent-kimi",
+      "estimated_hours": 6,
+      "channels": ["blog"],
+      "template": "templates/pillar.md"
+    },
+    {
+      "id": "social",
+      "name": "Social Media Post",
+      "description": "X/Twitter, LinkedIn post",
+      "default_assignee": "agent-flash",
+      "default_reviewer": "agent-kimi",
+      "estimated_hours": 0.5,
+      "channels": ["twitter", "linkedin"],
+      "template": "templates/social.md"
+    },
+    {
+      "id": "video",
+      "name": "Video Script",
+      "description": "YouTube video script",
+      "default_assignee": "agent-bard",
+      "default_reviewer": "agent-kimi",
+      "estimated_hours": 2,
+      "channels": ["youtube"],
+      "template": "templates/video.md"
+    },
+    {
+      "id": "visual",
+      "name": "Visual Asset",
+      "description": "Graphics, infographics, banners",
+      "default_assignee": "agent-vision",
+      "default_reviewer": "agent-kimi",
+      "estimated_hours": 2,
+      "channels": ["blog", "social"],
+      "template": null
+    }
+  ],
+  "statuses": [
+    "idea",
+    "outline",
+    "draft",
+    "review",
+    "scheduled",
+    "published",
+    "archived"
+  ],
+  "channels": [
+    {
+      "id": "blog",
+      "name": "EmbedPress Blog",
+      "url": "https://embedpress.com/blog/"
+    },
+    {
+      "id": "twitter",
+      "name": "X/Twitter",
+      "url": "https://twitter.com/embedpress"
+    },
+    {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://linkedin.com/company/embedpress"
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube",
+      "url": "https://youtube.com/@embedpress"
+    },
+    {
+      "id": "newsletter",
+      "name": "Email Newsletter",
+      "url": null
+    }
+  ],
+  "publishing_schedule": {
+    "blog": {
+      "frequency": "3x per week",
+      "preferred_days": ["Monday", "Wednesday", "Friday"],
+      "preferred_time": "09:00"
+    },
+    "social": {
+      "frequency": "daily",
+      "preferred_times": ["08:00", "12:00", "17:00"]
+    },
+    "youtube": {
+      "frequency": "1x per week",
+      "preferred_day": "Thursday",
+      "preferred_time": "10:00"
+    }
+  }
+}

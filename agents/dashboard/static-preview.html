@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-color-theme="matrix">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Management Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-tertiary: #1a1a25;
+            --accent-primary: #00ff88;
+            --accent-secondary: #00cc6a;
+            --accent-danger: #ff4444;
+            --accent-warning: #ffaa00;
+            --text-primary: #e0e0e0;
+            --text-secondary: #888;
+            --border-color: #2a2a3a;
+            --font-display: 'Orbitron', sans-serif;
+            --font-body: 'Rajdhani', sans-serif;
+            --font-mono: 'Share Tech Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .nav-tab {
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            cursor: pointer;
+            border-radius: 6px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .nav-tab:hover {
+            border-color: var(--accent-primary);
+            color: var(--text-primary);
+        }
+
+        .nav-tab.active {
+            background: var(--accent-primary);
+            color: #000;
+            border-color: var(--accent-primary);
+        }
+
+        .main-content {
+            padding: 2rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+        }
+
+        .stat-card.warning::before {
+            background: var(--accent-warning);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .stat-sub {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 2rem;
+        }
+
+        .panel {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-title {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-family: var(--font-body);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: #000;
+        }
+
+        .tenant-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .tenant-table th,
+        .tenant-table td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tenant-table th {
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .tenant-table tr:hover {
+            background: var(--bg-tertiary);
+        }
+
+        .tenant-name {
+            font-weight: 600;
+        }
+
+        .tenant-id {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .plan-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .plan-free { background: #333; color: #888; }
+        .plan-starter { background: #004d40; color: var(--accent-primary); }
+        .plan-pro { background: #1a237e; color: #82b1ff; }
+        .plan-enterprise { background: #4a148c; color: #ea80fc; }
+
+        .budget-bar {
+            width: 100px;
+            height: 8px;
+            background: var(--bg-tertiary);
+            border-radius: 4px;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+        }
+
+        .budget-fill {
+            height: 100%;
+            background: var(--accent-primary);
+        }
+
+        .budget-fill.warning {
+            background: var(--accent-warning);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .status-active {
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--accent-primary);
+        }
+
+        .status-paused {
+            background: rgba(255, 170, 0, 0.1);
+            color: var(--accent-warning);
+        }
+
+        .status-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        .session-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .session-item {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .session-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .session-meta {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .session-tokens {
+            text-align: right;
+        }
+
+        .token-count {
+            font-family: var(--font-display);
+            font-weight: 600;
+        }
+
+        .token-cost {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .activity-log {
+            max-height: 250px;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .activity-item {
+            display: flex;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .activity-time {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            min-width: 60px;
+        }
+
+        .activity-content {
+            flex: 1;
+        }
+
+        .activity-agent {
+            font-weight: 600;
+            color: var(--accent-primary);
+        }
+
+        .activity-action {
+            color: var(--text-secondary);
+        }
+
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">A</div>
+            <span>Agent Management</span>
+        </div>
+        <nav class="nav-tabs">
+            <button class="nav-tab active">Tenants</button>
+            <button class="nav-tab">Sessions</button>
+            <button class="nav-tab">Packages</button>
+            <button class="nav-tab">Logs</button>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Overview Stats -->
+        <div class="overview-grid">
+            <div class="stat-card">
+                <div class="stat-label">Active Tenants</div>
+                <div class="stat-value">3</div>
+                <div class="stat-sub">Across all plans</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Active Sessions</div>
+                <div class="stat-value">3</div>
+                <div class="stat-sub">Currently running</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Monthly Spend</div>
+                <div class="stat-value">$18.01</div>
+                <div class="stat-sub">Of $25 budget</div>
+            </div>
+            <div class="stat-card warning">
+                <div class="stat-label">Alerts</div>
+                <div class="stat-value">1</div>
+                <div class="stat-sub">Need attention</div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Tenants Panel -->
+            <div class="panel">
+                <div class="panel-header">
+                    <h3 class="panel-title">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        All Tenants
+                    </h3>
+                    <button class="btn btn-primary">+ New Tenant</button>
+                </div>
+                <table class="tenant-table">
+                    <thead>
+                        <tr>
+                            <th>Tenant</th>
+                            <th>Plan</th>
+                            <th>Budget</th>
+                            <th>Sessions</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="tenant-name">Acme Corp</div>
+                                <div class="tenant-id">client001</div>
+                            </td>
+                            <td><span class="plan-badge plan-starter">Starter</span></td>
+                            <td>
+                                <div class="budget-bar"><div class="budget-fill" style="width: 47%"></div></div>
+                                <span style="font-size: 0.75rem;">$2.34 / $5.00</span>
+                            </td>
+                            <td>2 / 3</td>
+                            <td><span class="status-badge status-active">active</span></td>
+                            <td>
+                                <button class="btn btn-secondary">View</button>
+                                <button class="btn btn-secondary">Pause</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tenant-name">TechStart Inc</div>
+                                <div class="tenant-id">client002</div>
+                            </td>
+                            <td><span class="plan-badge plan-pro">Pro</span></td>
+                            <td>
+                                <div class="budget-bar"><div class="budget-fill warning" style="width: 78%"></div></div>
+                                <span style="font-size: 0.75rem;">$15.67 / $20.00</span>
+                            </td>
+                            <td>1 / 10</td>
+                            <td><span class="status-badge status-active">active</span></td>
+                            <td>
+                                <button class="btn btn-secondary">View</button>
+                                <button class="btn btn-secondary">Pause</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="tenant-name">FreeUser Demo</div>
+                                <div class="tenant-id">client003</div>
+                            </td>
+                            <td><span class="plan-badge plan-free">Free</span></td>
+                            <td>
+                                <div class="budget-bar"><div class="budget-fill" style="width: 0%"></div></div>
+                                <span style="font-size: 0.75rem;">$0.00 / $0.00</span>
+                            </td>
+                            <td>0 / 1</td>
+                            <td><span class="status-badge status-paused">paused</span></td>
+                            <td>
+                                <button class="btn btn-secondary">View</button>
+                                <button class="btn btn-secondary">Resume</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div>
+                <!-- Live Sessions -->
+                <div class="panel" style="margin-bottom: 1rem;">
+                    <div class="panel-header">
+                        <h3 class="panel-title">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            Live Sessions
+                        </h3>
+                    </div>
+                    <div class="session-list">
+                        <div class="session-item">
+                            <div class="session-info">
+                                <h4>content-writer</h4>
+                                <div class="session-meta">Acme Corp • 45m • sess_abc123</div>
+                            </div>
+                            <div class="session-tokens">
+                                <div class="token-count">45K</div>
+                                <div class="token-cost">$0.89</div>
+                            </div>
+                        </div>
+                        <div class="session-item">
+                            <div class="session-info">
+                                <h4>researcher</h4>
+                                <div class="session-meta">Acme Corp • 15m • sess_def456</div>
+                            </div>
+                            <div class="session-tokens">
+                                <div class="token-count">12K</div>
+                                <div class="token-cost">$0.24</div>
+                            </div>
+                        </div>
+                        <div class="session-item">
+                            <div class="session-info">
+                                <h4>analyst</h4>
+                                <div class="session-meta">TechStart Inc • 2h • sess_ghi789</div>
+                            </div>
+                            <div class="session-tokens">
+                                <div class="token-count">89K</div>
+                                <div class="token-cost">$1.78</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Log -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3 class="panel-title">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                            </svg>
+                            Recent Activity
+                        </h3>
+                    </div>
+                    <div class="activity-log">
+                        <div class="activity-item">
+                            <div class="activity-time">14:32</div>
+                            <div class="activity-content">
+                                <span class="activity-agent">client001</span>
+                                <span class="activity-action">Spawned content-writer session</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-time">14:30</div>
+                            <div class="activity-content">
+                                <span class="activity-agent">client001</span>
+                                <span class="activity-action">Used 450 tokens</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-time">14:15</div>
+                            <div class="activity-content">
+                                <span class="activity-agent">system</span>
+                                <span class="activity-action">Warning: client002 at 78% budget</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-time">13:45</div>
+                            <div class="activity-content">
+                                <span class="activity-agent">system</span>
+                                <span class="activity-action">Auto-paused client003 (inactive)</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-time">13:00</div>
+                            <div class="activity-content">
+                                <span class="activity-agent">client002</span>
+                                <span class="activity-action">Spawned analyst session</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

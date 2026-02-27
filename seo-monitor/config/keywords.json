@@ -1,0 +1,125 @@
+{
+  "keywords": [
+    {
+      "id": "kw-001",
+      "keyword": "wordpress pdf embedder plugin",
+      "search_volume": "high",
+      "difficulty": "high",
+      "priority": "high",
+      "category": "primary",
+      "target_url": "https://embedpress.com/"
+    },
+    {
+      "id": "kw-002",
+      "keyword": "embed pdf in wordpress",
+      "search_volume": "high",
+      "difficulty": "high",
+      "priority": "high",
+      "category": "primary",
+      "target_url": "https://embedpress.com/embed-pdf-document/"
+    },
+    {
+      "id": "kw-003",
+      "keyword": "best wordpress embed plugin",
+      "search_volume": "high",
+      "difficulty": "high",
+      "priority": "high",
+      "category": "primary",
+      "target_url": "https://embedpress.com/"
+    },
+    {
+      "id": "kw-004",
+      "keyword": "wordpress pdf viewer plugin",
+      "search_volume": "high",
+      "difficulty": "high",
+      "priority": "high",
+      "category": "primary",
+      "target_url": "https://embedpress.com/"
+    },
+    {
+      "id": "kw-005",
+      "keyword": "embed youtube video wordpress",
+      "search_volume": "medium",
+      "difficulty": "medium",
+      "priority": "high",
+      "category": "primary",
+      "target_url": "https://embedpress.com/embed-youtube-video/"
+    },
+    {
+      "id": "kw-006",
+      "keyword": "embedpress vs pdf embedder",
+      "search_volume": "low",
+      "difficulty": "low",
+      "priority": "high",
+      "category": "comparison",
+      "target_url": "https://embedpress.com/blog/embedpress-vs-pdf-embedder/"
+    },
+    {
+      "id": "kw-007",
+      "keyword": "embedpress vs dearflip",
+      "search_volume": "low",
+      "difficulty": "low",
+      "priority": "medium",
+      "category": "comparison",
+      "target_url": "https://embedpress.com/blog/embedpress-vs-dearflip/"
+    },
+    {
+      "id": "kw-008",
+      "keyword": "best pdf plugin for wordpress",
+      "search_volume": "medium",
+      "difficulty": "medium",
+      "priority": "high",
+      "category": "comparison",
+      "target_url": "https://embedpress.com/blog/best-wordpress-pdf-plugins/"
+    },
+    {
+      "id": "kw-009",
+      "keyword": "how to embed pdf in wordpress elementor",
+      "search_volume": "medium",
+      "difficulty": "low",
+      "priority": "medium",
+      "category": "longtail",
+      "target_url": "https://embedpress.com/blog/embed-pdf-elementor/"
+    },
+    {
+      "id": "kw-010",
+      "keyword": "wordpress pdf embed with download button",
+      "search_volume": "low",
+      "difficulty": "low",
+      "priority": "medium",
+      "category": "longtail",
+      "target_url": "https://embedpress.com/blog/pdf-download-button/"
+    }
+  ],
+  "competitors": [
+    {
+      "id": "pdf-embedder",
+      "domain": "wp-pdf.com",
+      "keywords_to_track": [
+        "wordpress pdf embedder plugin",
+        "embed pdf in wordpress",
+        "best wordpress embed plugin"
+      ]
+    },
+    {
+      "id": "dearflip",
+      "domain": "dearflip.com",
+      "keywords_to_track": [
+        "wordpress pdf viewer plugin",
+        "3d flipbook wordpress"
+      ]
+    }
+  ],
+  "settings": {
+    "check_frequency": "daily",
+    "report_schedule": {
+      "daily": "09:00",
+      "weekly": "Monday 10:00"
+    },
+    "alert_threshold": {
+      "ranking_drop": 5,
+      "ranking_gain": 3,
+      "new_competitor_content": true
+    }
+  }
+}
