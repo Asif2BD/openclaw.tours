@@ -15,7 +15,7 @@
 openclaw skills install tour-planner
 
 # Or clone manually
-git clone https://github.com/openclaw/tour-planner.git
+git clone https://github.com/Asif2BD/openclaw.tours.git
 cd tour-planner
 npm install
 ```
@@ -188,7 +188,7 @@ CACHE_TTL_HOURS=24
 
 ```bash
 # Clone repository
-git clone https://github.com/openclaw/tour-planner.git
+git clone https://github.com/Asif2BD/openclaw.tours.git
 cd tour-planner
 
 # Install dependencies
@@ -269,9 +269,9 @@ MIT License — see [LICENSE](LICENSE) for details.
 ## Links
 
 - **Website:** https://openclaw.tours
-- **GitHub:** https://github.com/openclaw/tour-planner
+- **GitHub:** https://github.com/Asif2BD/openclaw.tours
 - **Docs:** https://openclaw.tours/docs
-- **Issues:** https://github.com/openclaw/tour-planner/issues
+- **Issues:** https://github.com/Asif2BD/openclaw.tours/issues
 
 ---
 

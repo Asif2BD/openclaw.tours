@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenCLAW Tour Planner — AI-Powered Travel Planning</title>
+    <meta name="description" content="OpenCLAW Tour Planner is a universal travel skill for AI agents. Generate itineraries, check weather, discover attractions — all through natural conversation. Free and open source.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="OpenCLAW Tour Planner — AI-Powered Travel Planning">
+    <meta property="og:description" content="Give your AI agent the power to plan any trip. Generate itineraries, check weather, discover attractions — free and open source.">
+    <meta property="og:url" content="https://openclaw.tours/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="OpenCLAW Tour Planner">
+    <meta name="twitter:description" content="Give your AI agent the power to plan any trip. Free and open source.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://openclaw.tours/">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --bg-primary: #0a0a0f;
@@ -45,6 +66,7 @@
             padding: 1rem 2rem;
             background: rgba(10, 10, 15, 0.8);
             backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
             display: flex;
@@ -141,6 +163,8 @@
             font-size: 0.875rem;
             color: var(--text-secondary);
             margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-badge .dot {
@@ -165,6 +189,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            position: relative;
+            z-index: 1;
         }
 
         .hero p {
@@ -172,6 +198,8 @@
             color: var(--text-secondary);
             max-width: 600px;
             margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-cta {
@@ -179,6 +207,8 @@
             gap: 1rem;
             flex-wrap: wrap;
             justify-content: center;
+            position: relative;
+            z-index: 1;
         }
 
         .btn {
@@ -280,13 +310,8 @@
             to { opacity: 1; }
         }
 
-        .chat-user {
-            color: var(--accent);
-        }
-
-        .chat-agent {
-            color: var(--text-secondary);
-        }
+        .chat-user { color: var(--accent); }
+        .chat-agent { color: var(--text-secondary); }
 
         .chat-response {
             color: var(--text-primary);
@@ -393,13 +418,11 @@
             font-size: 0.9rem;
             text-align: left;
             overflow-x: auto;
-            position: relative;
         }
 
         .code-block::before {
-            content: '$';
+            content: '$ ';
             color: var(--accent);
-            margin-right: 0.75rem;
         }
 
         /* Footer */
@@ -425,41 +448,20 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            nav {
-                padding: 1rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                padding: 6rem 1.5rem 3rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .demo {
-                padding: 2rem 1rem;
-            }
-
-            .features {
-                padding: 4rem 1rem;
-            }
-
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
+            nav { padding: 1rem; }
+            .nav-links { display: none; }
+            .hero { padding: 6rem 1.5rem 3rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .demo { padding: 2rem 1rem; }
+            .features { padding: 4rem 1rem; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .install { padding: 4rem 1.5rem; }
         }
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav>
         <a href="#" class="logo">
@@ -469,12 +471,12 @@
         <ul class="nav-links">
             <li><a href="#demo">Demo</a></li>
             <li><a href="#features">Features</a></li>
-            <li><a href="https://github.com/openclaw/tour-planner" target="_blank">GitHub</a></li>
+            <li><a href="https://github.com/Asif2BD/openclaw.tours" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
         <a href="#install" class="nav-cta">Install Skill</a>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
         <div class="hero-badge">
             <span class="dot"></span>
@@ -484,11 +486,11 @@
         <p>OpenCLAW Tour Planner is a universal travel skill for AI agents. Generate itineraries, check weather, discover attractions — all through natural conversation.</p>
         <div class="hero-cta">
             <a href="#install" class="btn btn-primary">Install Skill</a>
-            <a href="https://github.com/openclaw/tour-planner" class="btn btn-secondary" target="_blank">View on GitHub</a>
+            <a href="https://github.com/Asif2BD/openclaw.tours" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
         </div>
     </section>
 
-    <!-- Demo Section -->
+    <!-- Demo -->
     <section class="demo" id="demo">
         <div class="demo-window">
             <div class="demo-header">
@@ -521,7 +523,7 @@
 - Weather: 18-22°C, partly cloudy
 - Budget: $1,200-1,800
 
-## Day 1: Arrival & Shibuya
+## Day 1: Arrival &amp; Shibuya
 ### Morning
 - 10:00 — Arrive at Narita/Haneda
 - 12:00 — Airport Express to Shibuya
@@ -531,7 +533,7 @@
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Features -->
     <section class="features" id="features">
         <div class="section-header">
             <h2>Everything You Need</h2>
@@ -571,16 +573,14 @@
         </div>
     </section>
 
-    <!-- Install Section -->
+    <!-- Install -->
     <section class="install" id="install">
         <div class="install-content">
             <h2>Install in Seconds</h2>
             <p>Add the Tour Planner skill to your OpenClaw agent with one command.</p>
-            <div class="code-block">
-                openclaw skills install tour-planner
-            </div>
+            <div class="code-block">openclaw skills install tour-planner</div>
             <p style="margin-top: 2rem; font-size: 0.9rem;">
-                Or clone from <a href="https://github.com/openclaw/tour-planner" target="_blank">GitHub</a> and install manually.
+                Or clone from <a href="https://github.com/Asif2BD/openclaw.tours" target="_blank" rel="noopener">GitHub</a> and install manually.
             </p>
         </div>
     </section>
@@ -588,13 +588,12 @@
     <!-- Footer -->
     <footer>
         <p>
-            Built for the OpenClaw community • 
-            <a href="https://github.com/openclaw/tour-planner" target="_blank">GitHub</a> • 
-            <a href="https://openclaw.ai" target="_blank">OpenClaw</a>
+            Built for the OpenClaw community &bull;
+            <a href="https://github.com/Asif2BD/openclaw.tours" target="_blank" rel="noopener">GitHub</a> &bull;
+            <a href="https://openclaw.ai" target="_blank" rel="noopener">OpenClaw</a>
         </p>
-        <p style="margin-top: 0.5rem; opacity: 0.7;">
-            MIT License — Free forever
-        </p>
+        <p style="margin-top: 0.5rem; opacity: 0.7;">MIT License — Free forever</p>
     </footer>
+
 </body>
 </html>
