@@ -1,6 +1,6 @@
 {
   "name": "openclaw-tour-planner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Universal travel planning skill for OpenClaw agents",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

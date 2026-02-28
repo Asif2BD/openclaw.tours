@@ -1,7 +1,7 @@
 ---
 name: openclaw-tour-planner
 description: "Universal travel planning skill for OpenClaw agents. Plan itineraries, check weather, discover attractions, and estimate budgets — all through natural conversation. Uses free APIs, no API key required for core features."
-version: 1.0.0
+version: 1.0.1
 author: Asif2BD
 license: MIT
 tags: [travel, itinerary, weather, tourism, planning]
