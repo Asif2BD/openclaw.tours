@@ -1,4 +1,14 @@
-# OpenCLAW Tour Planner — Detailed Analysis & Architecture
+# OpenCLAW Tour Planner — Architecture & Roadmap
+
+> **⚠️ This is a design / roadmap document, not a description of current functionality.**
+>
+> It describes possible future capabilities (Playwright scrapers, flight APIs, hotel search).
+> **None of the scraping features described here are implemented in the current release.**
+> Playwright is NOT a dependency. No scraping code exists in `src/`.
+>
+> For the current feature set, see `SKILL.md` and `src/`.
+
+---
 
 ## Executive Summary
 

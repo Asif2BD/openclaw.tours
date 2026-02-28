@@ -1,7 +1,7 @@
 ---
 name: openclaw-tour-planner
 description: "Universal travel planning skill for OpenClaw agents. Plan itineraries, check weather, discover attractions, and estimate budgets — all through natural conversation. Uses free APIs, no API key required for core features."
-version: 1.0.1
+version: 1.0.2
 author: Asif2BD
 license: MIT
 tags: [travel, itinerary, weather, tourism, planning]
@@ -126,14 +126,19 @@ User Request
 ### Environment Variables
 
 ```bash
-# Required
+# Optional — improves weather accuracy (free tier available at visualcrossing.com)
+# Core features work without any keys using Open-Meteo (free, keyless)
 VISUAL_CROSSING_API_KEY=your_key_here
 
-# Optional
+# Optional — alternative weather source
 OPENWEATHER_API_KEY=backup_weather_key
+
+# Optional — flight search (Phase 2, not yet implemented in current release)
 AMADEUS_API_KEY=flight_search_key
 AMADEUS_API_SECRET=flight_search_secret
-CACHE_TTL_HOURS=24
+
+# Optional — redirect the local SQLite response cache (default: ~/.openclaw/cache/tour-planner.db)
+TOUR_PLANNER_CACHE_PATH=/custom/path/tour-planner.db
 ```
 
 ### Skill Config (openclaw.json)

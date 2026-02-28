@@ -23,7 +23,8 @@ export class Cache {
       process.env.HOME ?? '/root',
       '.openclaw', 'cache', 'tour-planner.db',
     );
-    const resolvedPath = dbPath ?? defaultPath;
+    // Allow override via env var (documented in SECURITY.md)
+    const resolvedPath = dbPath ?? process.env.TOUR_PLANNER_CACHE_PATH ?? defaultPath;
 
     // Ensure directory exists
     fs.mkdirSync(path.dirname(resolvedPath), { recursive: true });
